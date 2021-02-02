@@ -1,8 +1,15 @@
 import React from 'react'
+import DadJoke from './DadJoke'
+import FindJoke from "./FindJoke"
 
 const App = () => {
   return (
-    <h1>React development has begun!</h1>
+    <>
+    <DadJoke/> 
+    <br></br>
+    <br></br>
+    <FindJoke/>
+    </>
   )
 }
 

@@ -1,8 +1,15 @@
-import React from 'react'
+//@ts-check
+
+import React from "react";
+import GhibliFilms from "./GhibliFilms";
 
 const App = () => {
   return (
-    <h1>React development has begun!</h1>
+    <div>
+      <h1>React development has begun!</h1>
+      <GhibliFilms />
+    </div>
+    
   )
 }
 

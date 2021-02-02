@@ -21,7 +21,6 @@ const DadJoke = () => {
     <h2>Random Horrible Dad Joke!</h2>
     <p>{joke.joke}</p>
     <button onClick={fetchJoke}>Give me another!</button>
-
     </>
   )
 }

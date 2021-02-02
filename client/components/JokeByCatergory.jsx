@@ -5,6 +5,8 @@ const JokesByCategory = () => {
 
   const [category, setCategory] = useState([])
 
+  const [chosenCat, setChosenCat] = useState([])
+
   const getCategory = () => {
     getChuckNorrisByCategory()
     .then(gottedCategory => {
@@ -21,11 +23,15 @@ const JokesByCategory = () => {
       <h3>Here are the possible catergories</h3>
       <ul>
       {category.map(c => {
+        console.log(c)
         return (
-          <li key={c}>{c}</li>
+          <li key={c}>
+            {c}
+            </li>
         )
       })}
       </ul>
+      <a href='/'>Home</a>
     </>
   )
 }

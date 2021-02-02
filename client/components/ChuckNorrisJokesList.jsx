@@ -28,6 +28,7 @@ const ChuckNorrisJokesList = () => {
           {jokes.value} 
         </div>  
       )}
+      <a href='#/categories'>categories</a>
     </>
   )
 }

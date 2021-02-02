@@ -18,3 +18,8 @@ export function getChuckNorrisByCategory() {
   .then(res => res.body)
 }
 
+// export function getIndividualCategory() {
+//   return request.get(catergoryUrl)
+//   .then(res => res.body)
+// }
+

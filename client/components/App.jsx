@@ -1,8 +1,12 @@
 import React from 'react'
+import ShowFoodDish from './ShowFoodDish'
 
 const App = () => {
   return (
-    <h1>React development has begun!</h1>
+    <>
+      <h1>Random Food Dish API</h1>
+      <ShowFoodDish />
+    </>
   )
 }
 

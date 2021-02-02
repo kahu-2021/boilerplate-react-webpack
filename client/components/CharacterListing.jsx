@@ -45,9 +45,10 @@ const CharacterListing = () => {
   return (
     <>
     <h1>Quote: "{randomCharacter.quote}"</h1>
-      <h1 onClick={() => handleClick(randomCharacter.character)}>{randomCharacter.character}</h1>
-      <h1 onClick={() => handleClick(randomCharacterTwo.character)}>{randomCharacterTwo.character}</h1>
-      <h2>Score: {score}</h2>
+    <h2>Who said it?</h2>
+      <button onClick={() => handleClick(randomCharacter.character)}>{randomCharacter.character}</button>
+      <button onClick={() => handleClick(randomCharacterTwo.character)}>{randomCharacterTwo.character}</button>
+      <p>Score: {score}</p>
     </>
   )
 }

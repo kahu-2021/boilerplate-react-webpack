@@ -1,8 +1,11 @@
 import React from 'react'
+import Random from './Random'
 
 const App = () => {
   return (
-    <h1>React development has begun!</h1>
+    <>
+      <Random />
+    </>
   )
 }
 

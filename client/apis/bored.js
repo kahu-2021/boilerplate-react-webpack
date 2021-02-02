@@ -7,6 +7,11 @@ export function getRandom() {
     .then(res => res.body)
 }
 
+export function getActivityType(type) {
+  return request.get(baseUrl + '?type='+type)
+    .then(res => res.body)
+}
+
 // export function getSatelliteById(id) {
 //   return request.get(baseUrl + 'satellites/' + id)
 //     .then(res => res.body)

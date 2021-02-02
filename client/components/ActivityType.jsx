@@ -31,9 +31,17 @@ const ActivityType = () => {
   const displayActivity = () => {
     let properties = []
     for(const property in activities) {
-      // console.log(property)
+      if (activities[property] === ""){
+        console.log("it works")
+        activities[property] = "No Link Available"
+        }
+      else if(property == 'link') {
+        activities[property] = (<a href={activities[property]}>{activities[property]}</a>)
+      }
+       
       properties.push(<p> {property}: {activities[property]}</p>)
     }
+    // console.log(properties[link])
     return properties
   }
 

@@ -6,11 +6,11 @@ const CharacterListing = () => {
   const [randomCharacterTwo, setRandomCharacterTwo] = useState({})
   const [score, setScore] = useState(0)
   const [loading, setLoading] = useState(false)
+  const [correct, setCorrect] = useState(null)
 
 
   const fetchCharacters = () => {
     getCharacters().then((fetchedCharacters) => {
-      console.log(fetchedCharacters)
       const randomNumber = () =>
         Math.floor(Math.random() * Math.floor(fetchedCharacters.length))
       let ranNum = randomNumber()
@@ -34,8 +34,8 @@ const CharacterListing = () => {
 
   const handleClick = (character) => {
     character == randomCharacter.character
-      ? setScore((prevScore) => prevScore + 1)
-      : console.log("incorrect")
+      ? (setScore((prevScore) => prevScore + 1), setCorrect('Correct!'))
+      : setCorrect("Wrong!")
     fetchCharacters()
   }
 
@@ -61,6 +61,7 @@ return (
       </div>
       </div>
       <p>Score: {score}</p>
+      <p>{correct}</p>
     </div>
 )
 }

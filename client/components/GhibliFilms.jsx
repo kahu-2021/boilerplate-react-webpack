@@ -5,6 +5,7 @@ import { getFilms } from "../apis/iss";
 
 const GhibliFilms = () => {
   const [films, setFilms] = useState([]);
+  const [idToShow, setId] = useState("");
 
   const fetchFilms = () => {
     getFilms()
@@ -19,12 +20,40 @@ const GhibliFilms = () => {
     }, []
   )
 
+  function getDescription(id) {
+    setId(id)
+  }
+
+  // function renderFilmInfo (film) {
+    //   return (
+    //     <>
+    //     <img src={film.image} />
+    //     <p>{film.year}</p>
+    //     <p>{film.description}</p>
+    //     </>
+    //   )
+    // }
+  // return (
+  //     <ul>
+  //       {films.map(film => {
+  //         return (
+  //             <li key={film.id} onClick={() => getDescription(film.id)}>
+  //                 {film.title}
+  //                 {idToShow === film.id && renderFilmInfo(film)}
+  //             </li>
+  //           )
+  //         })
+  //       }
+  //     </ul>
+  //   )
+
   return (
     <ul>
       {films.map(film => {
         return (
-            <li key={film.id}>
-              {film.title}
+            <li key={film.id} onClick={() => getDescription(film.id)}>
+                {film.title}
+                {idToShow === film.id && <p>{film.description}</p>}
             </li>
           )
         })

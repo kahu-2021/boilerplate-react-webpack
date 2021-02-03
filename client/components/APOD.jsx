@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from 'react'
 import { getPictureOfTheDay } from '../apis/nasa'
-import PastAPOD from './PastAPOD'
 
 
 const APOD = () => {

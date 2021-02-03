@@ -3,6 +3,7 @@ import DadJoke from './DadJoke'
 import FindJoke from "./FindJoke"
 import APOD from './APOD'
 import PastAPOD from './PastAPOD'
+import Cat from './Cat'
 
 const App = () => {
   return (
@@ -12,9 +13,11 @@ const App = () => {
     <br></br>
     <FindJoke/>
     <br></br>
-    <APOD/>
+    {/* <APOD/> */}
     <br></br>
-    <PastAPOD/>
+    {/* <PastAPOD/> */}
+    <br></br>
+    <Cat/>
     </>
   )
 }

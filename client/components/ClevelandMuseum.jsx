@@ -5,6 +5,7 @@ import { getArtworks } from "../apis/iss";
 
 const ClevelandMuseum = () => {
   const [artworks, setArtworks] = useState({data : []});
+  const [idToShow, setId] = useState("");
 
   const fetchArtworks = () => {
     getArtworks()
@@ -18,6 +19,10 @@ const ClevelandMuseum = () => {
       fetchArtworks();
     }, []
   );
+
+  function clickButton(id) {
+    setId(id);
+  }
     
   return (
     <ul>
@@ -26,9 +31,13 @@ const ClevelandMuseum = () => {
         }).map(artwork=> {
           return (
               <li key={artwork.id}>
-                <p>
-                  {artwork.creators[0].description}
-                </p>
+                <div>
+                  <div>
+                    {artwork.creators[0].description}
+                  </div>
+                  <button key={artwork.id} onClick={() => clickButton(artwork.id)}>Biography</button>
+                  {idToShow === artwork.id && <div>{artwork.creators[0].biography}</div>}
+                </div>
                 <div>
                   {artwork.title}
                 </div>

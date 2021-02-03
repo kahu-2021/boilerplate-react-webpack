@@ -2,37 +2,40 @@ import React, { useEffect, useState } from 'react'
 import { getAdviceSlip, getAdviceSlipById } from '../apis/advice'
 
 const AdviceSlip = () => {
-    const [advise, setAdvice] = useState([])
+	const [advice, setAdvice] = useState(null)
 
-    const fetchAdvice = () => {
-        getAdviceSlip()
-        .then(fetchedAdvice => {
-            setAdvice(fetchedAdvice)
-        })
-    }
+	const fetchAdvice = () => {
+		getAdviceSlip()
+			.then(fetchedAdvice => {
+				console.log(fetchedAdvice)
+				setAdvice(fetchedAdvice)
+			})
+	}
 
-    const [singleAdvice, setSingleAdvice] = useState(null)
+	// const [singleAdvice, setSingleAdvice] = useState(null)
 
-    const fetchAdviceById = (id) => {
-        getAdviceSlipById(id)
-        .then(fetchedAdviceId => {
-            setSingleAdvice(fetchedAdviceId)
-        })
-    }
+	// const fetchAdviceById = (id) => {
+	// 	getAdviceSlipById(id)
+	// 		.then(fetchedAdviceId => {
+	// 			setSingleAdvice(fetchedAdviceId)
+	// 		})
+	// }
 
-    useEffect(() => {
-        fetchAdvice()
-    }, [])
+	useEffect(() => {
+		fetchAdvice()
+	}, [])
 
-    return (
-        <>
-        <ul>
-            {advise && 
-                <li>{advise.slip} </li> 
-            }
-        </ul>
-        </>
-    )
+	return (
+		<>
+			<ul>
+				{advice &&
+					<li>{advice.slip.advice}</li>
+				}
+				{/* <button onClick={advice.slip.advice}>press</button> */}
+			</ul>
+			{/* <button onClick={advice.slip.advice}>press</button> */}
+		</>
+	)
 }
 
 export default AdviceSlip

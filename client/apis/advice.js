@@ -4,7 +4,7 @@ const baseUrl = 'https://api.adviceslip.com/'
 
 export function getAdviceSlip() {
     return request.get(baseUrl + 'advice')
-    .then(res => res.body)
+    .then(res => JSON.parse(res.text))
 }
 
 export function getAdviceSlipById(id) {

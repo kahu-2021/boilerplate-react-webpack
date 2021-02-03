@@ -8,6 +8,7 @@ const GhibliFilms = () => {
   const [idToShow, setId] = useState("");
 
   const fetchFilms = () => {
+    // console.log(getFilms())
     getFilms()
         .then(filmsList => {
             setFilms(filmsList);

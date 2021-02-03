@@ -46,7 +46,7 @@ const CharacterListing = () => {
     <>
       <h1 >Quote: "{randomCharacter.quote}"</h1>
       <h2>Who said it?</h2>
-      <div style={{display: "flex", flexDirection: imageFlip == 0 ? "row" : "row-reverse"}}>
+      <div style={{display: "flex", justifyContent:"center", flexDirection: imageFlip == 0 ? "row" : "row-reverse"}}>
       <div >
       <button onClick={() => handleClick(randomCharacter.character)}>
         {randomCharacter.character}

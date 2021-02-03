@@ -1,12 +1,14 @@
 import React, {useEffect, useState} from 'react'
-import {getChuckNorrisByCategory} from '../apis/chuckNorris'
+import {getIndividualCategory} from '../apis/chuckNorris'
 
-const SingleCategory = () => {
+const SingleCategory = (props) => {
 
-  const [singleCat, setSingleCat]
+  const [singleCat, setSingleCat] = useState([])
+
+  const category = props.match.params.category
 
   const getSingleCat = () => {
-    getChuckNorrisByCategory()
+    getIndividualCategory(category)
     .then(singCat => {
       setSingleCat(singCat)
     })
@@ -19,9 +21,14 @@ const SingleCategory = () => {
   return(
     <>
       {singleCat && (
+        <>
         <h2>
-          
+          Here is the jokes from your selected category
         </h2>
+        <p>
+         {singleCat.value}
+        </p>
+        </>
       )}
 
     </>

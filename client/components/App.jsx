@@ -2,6 +2,7 @@ import React from 'react'
 import {HashRouter as Router, Route} from 'react-router-dom'
 import ChuckNorrisJokesList from './ChuckNorrisJokesList'
 import JokesByCategory from './JokeByCatergory'
+import SingleCategory from './SingleCategory'
 
 const App = () => {
   return (
@@ -10,6 +11,7 @@ const App = () => {
     <Router>
       <Route path='/' exact component={ChuckNorrisJokesList}/>
       <Route path='/categories' exact component={JokesByCategory}/>
+      <Route path='/singlecat/:category' exact component={SingleCategory}/>
     </Router>
     </>
   )

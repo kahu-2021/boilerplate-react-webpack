@@ -2,6 +2,7 @@ import request from 'superagent'
 
 const baseUrl = 'https://api.chucknorris.io/jokes/random'
 const catergoryUrl = 'https://api.chucknorris.io/jokes/categories'
+const singleCatUrl = 'https://api.chucknorris.io/jokes/random?category='
 
 export function getChuckNorris() {
   return request.get(baseUrl)
@@ -18,8 +19,8 @@ export function getChuckNorrisByCategory() {
   .then(res => res.body)
 }
 
-// export function getIndividualCategory() {
-//   return request.get(catergoryUrl)
-//   .then(res => res.body)
-// }
+export function getIndividualCategory(c) {
+  return request.get(singleCatUrl + c)
+  .then(res => res.body)
+}
 

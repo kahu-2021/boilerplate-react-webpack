@@ -1,11 +1,12 @@
 import React, {useEffect, useState} from 'react'
-import {getChuckNorris, getChuckNorrisById, getChuckNorrisByCategory} from '../apis/chuckNorris'
+import {getChuckNorris, getChuckNorrisById, getChuckNorrisByCategory, getCategoryId, getIndividualCategory} from '../apis/chuckNorris'
+import {Link} from 'react-router-dom'
 
 const JokesByCategory = () => {
 
   const [category, setCategory] = useState([])
 
-  const [chosenCat, setChosenCat] = useState([])
+  // const [chosenCat, setChosenCat] = useState([])
 
   const getCategory = () => {
     getChuckNorrisByCategory()
@@ -13,6 +14,13 @@ const JokesByCategory = () => {
       setCategory(gottedCategory)
     })
   }
+
+  // const getCategoryById = (c) => {
+  //   getCategoryById(c)
+  //   .then(gottedCategory => {
+  //     setCategory(gottedCategory)
+  //   })
+  // }
 
   useEffect(() => {
     getCategory()
@@ -23,11 +31,13 @@ const JokesByCategory = () => {
       <h3>Here are the possible catergories</h3>
       <ul>
       {category.map(c => {
-        console.log(c)
         return (
           <li key={c}>
+            <Link to={`/singlecat/${c}`}>
             {c}
-            </li>
+            </Link>
+          </li>
+
         )
       })}
       </ul>
@@ -35,9 +45,6 @@ const JokesByCategory = () => {
     </>
   )
 }
-
-
-// {for (i = 0; i <category.length; i++)
 
 
 export default JokesByCategory

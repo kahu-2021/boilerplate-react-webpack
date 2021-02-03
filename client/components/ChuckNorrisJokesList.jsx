@@ -24,7 +24,6 @@ const ChuckNorrisJokesList = () => {
           <h3>
           Here is my joke 
           </h3>
-          
           {jokes.value} 
         </div>  
       )}

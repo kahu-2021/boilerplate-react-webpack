@@ -5,7 +5,7 @@ const CharacterListing = () => {
   const [randomCharacter, setRandomCharacter] = useState({})
   const [randomCharacterTwo, setRandomCharacterTwo] = useState({})
   const [score, setScore] = useState(0)
-  const [flipper, setFlipper] = useState(0)
+  const [loading, setLoading] = useState(false)
 
 
   const fetchCharacters = () => {
@@ -17,15 +17,14 @@ const CharacterListing = () => {
       let ranNum2 = randomNumber()
       
       while (fetchedCharacters[ranNum].character == fetchedCharacters[ranNum2].character) {
-   
         ranNum2 = randomNumber()
       }
       
       setRandomCharacter(fetchedCharacters[ranNum])
       setRandomCharacterTwo(fetchedCharacters[ranNum2])
-
       setImageFlip(Math.round(Math.random()))
     })
+    setLoading(true)
   }
 
   useEffect(() => {
@@ -42,8 +41,9 @@ const CharacterListing = () => {
 
   const [imageFlip, setImageFlip] = useState(0)
 
-  return (
-    <>
+ 
+return (
+    <div style={{display: loading ? "" : "none"}}>
       <h1 >Quote: "{randomCharacter.quote}"</h1>
       <h2>Who said it?</h2>
       <div style={{display: "flex", justifyContent:"center", flexDirection: imageFlip == 0 ? "row" : "row-reverse"}}>
@@ -61,7 +61,7 @@ const CharacterListing = () => {
       </div>
       </div>
       <p>Score: {score}</p>
-    </>
-  );
-};
+    </div>
+)
+}
 export default CharacterListing;

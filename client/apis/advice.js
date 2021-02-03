@@ -9,5 +9,5 @@ export function getAdviceSlip() {
 
 export function getAdviceSlipById(id) {
     return request.get(baseUrl + 'advice/' + id)
-    .then(res => res.body)
+    .then(res => JSON.parse(res.text))
 }

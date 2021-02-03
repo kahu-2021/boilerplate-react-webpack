@@ -40,8 +40,9 @@ const Random = () => {
 
   return (
     <>
-      <h1>Get a random activity</h1>
+      <h1>Get a random activity</h1> <br></br>
       <button onClick={bigFunc}>Get Random Activity</button>
+      <br></br>
       {showInfo &&  displayActivity()}
     </>
   );

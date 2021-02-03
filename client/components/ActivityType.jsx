@@ -46,18 +46,28 @@ const ActivityType = () => {
   }
 
   return (
-    <>
+    <div>
+      <br></br>
       <button onClick={() => bigFunc('education')}>Get educational activity</button>
+      <br></br>
       <button onClick={() => bigFunc('recreational')}>Get recreational activity</button>
+      <br></br>
       <button onClick={() => bigFunc('social')}>Get social activity</button>
+      <br></br>
       <button onClick={() => bigFunc('diy')}>Get DIY activity</button>
+      <br></br>
       <button onClick={() => bigFunc('charity')}>Get charity activity</button>
+      <br></br>
       <button onClick={() => bigFunc('cooking')}>Get cooking activity</button>
+      <br></br>
       <button onClick={() => bigFunc('relaxation')}>Get relaxation activity</button>
+      <br></br>
       <button onClick={() => bigFunc('music')}>Get music activity</button>
+      <br></br>
       <button onClick={() => bigFunc('busywork')}>Get busywork activity</button>
+      <br></br>
       {showInfo &&  displayActivity()}
-    </>
+    </div>
   )
 }
 

@@ -26,7 +26,12 @@ const ClevelandMuseum = () => {
         }).map(artwork=> {
           return (
               <li key={artwork.id}>
-                {artwork.title}
+                <p>
+                  {artwork.creators[0].description}
+                </p>
+                <div>
+                  {artwork.title}
+                </div>
                 <img src={artwork.images.web.url} />
               </li>
             )

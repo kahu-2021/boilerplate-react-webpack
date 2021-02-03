@@ -60,8 +60,8 @@ return (
       <img style={{ height:"300px"}} src={randomCharacterTwo.image}/>
       </div>
       </div>
-      <p>Score: {score}</p>
-      <p>{correct}</p>
+      <h1>Score: {score}</h1>
+      <h2>{correct}</h2>
     </div>
 )
 }

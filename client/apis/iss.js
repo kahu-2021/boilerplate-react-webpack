@@ -11,6 +11,6 @@ export function getFilms() {
 }
 
 export function getArtworks() {
-  return request.get(museumUrl + "/artworks/").query({limit:20})
+  return request.get(museumUrl + "/artworks/").query({limit:40})
     .then(res => res.body)
 }

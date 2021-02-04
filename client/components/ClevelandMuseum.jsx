@@ -27,7 +27,7 @@ const ClevelandMuseum = () => {
   return (
     <ul>
       {artworks.data.filter(artwork => {
-          return artwork.images != null
+          return artwork.images != null && artwork.creators[0].biography != null
         }).map(artwork=> {
           return (
               <li key={artwork.id}>

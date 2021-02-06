@@ -3,7 +3,7 @@ import { getAllRates } from '../apis/currency'
 
 
 const RatesListing = () => {
-
+//Place to store retrieved rates
 const[rates, setRates] = useState([])
 
 const fetchRates = () => {
@@ -12,7 +12,7 @@ const fetchRates = () => {
             setRates(fetchedRates)
         })
 }
-
+//Initiate retrieval upon loading
 useEffect(() => {
     fetchRates
 },[])
